@@ -1,0 +1,164 @@
+/* go to fonts.google.com, select font and style, then copy paste code under import */
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap');
+
+
+/* 
+    Note: classes are referenced with .class-name 
+          ids are referenced with #id-name
+*/
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #292c34;
+}
+
+header {
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #25272e;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+/* style the scoreboard - using the class="score-board" assigned to the div tag in index.html */
+.score-board {
+    /* auto = center with a 20 px margin top and bottom */
+    margin: 20px auto;
+    border: 3px solid white;
+    /* to round the border */
+    border-radius: 4px;
+    /* to center text within the scoreboard */
+    text-align: center;
+    width: 200px;
+    color: white;
+    font-size: 46px;
+    /* padding 15 pixels to top and bottom and 20 pixels to left and right */
+    padding: 15px 20px;
+    font-family: Asap, sans-serif;
+    position: relative;
+}
+
+/* style user and comp labels using class="badge" attribute from html file */
+.badge {
+    background-color: #e2584d;
+    color: white;
+    font-size: 14px;
+    padding: 2px 10px;
+    font-family: Asap, sans-serif;
+}
+
+/* user user-label and comp-label ids to position labels on scoreboard accordingly */
+#user-label {
+    /* element with position absolute is positioned relative to the nearest positioned 
+    ancestor (instead of positioned relative to the viewport, like fixed*/
+    position: absolute;
+    /* using 
+    top: 0;
+    left: 0        would position user-label to the top left of the browser window, but we 
+                    do not want that - want the scoreboard's (parent's) top-left corner
+
+    so, we give the .score-board a position of relative (anything other than static or inherit)
+    -> see line 40, now we can use top and left accordingly 
+    */
+    top: 30px;
+    left: -25px; /* negative left value will push it to the left */
+}
+
+/* user same principles for computer-label */
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -30px; /* negative right value will push it to the right */
+}
+
+/* format result line */
+.result {
+    font-size: 40px;
+    color: white;
+
+}
+
+/* deal with paragraph tag separately */
+.result > p {
+    text-align: center;
+    /* make the text bold by adjusting weight */
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+}
+
+/* parent div */
+.choices {
+    /* change top margin only */
+    margin-top: 50px;
+    text-align: center;
+
+
+}
+
+/* work with images next */
+.choice {
+    /* square box around images */
+    border: 4px solid white;
+    /* make border circular - make radius HALF of width */
+    border-radius: 50%;
+    /* spread images apart horizontally and add some padding for the border */
+    margin: 0 20px;
+    padding: 5px;
+    /* display the choices horizontally */
+    display: inline-block;
+
+    /* for smooth background change */
+    transition: all 0.3s ease;
+}
+
+/* to make mouse change from pointer to hand click tool when hovering over img */
+.choice:hover {
+    background: black;
+    cursor: pointer;
+}
+
+#action-message {
+    text-align: center;
+    font-family: Asap, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* effect when user wins */
+.green-glow {
+    border: 4px solid green;
+    /* box shadow inputs: horizontal offset, vertical offset, blur, spread (optional), colour */
+    box-shadow: 0 0 10px #31b43a;
+}
+
+/* effect when user loses */
+.red-glow {
+    border: 4px solid red;
+    box-shadow: 0 0 10px #e2584d;
+}
+
+/* effect when user draws */
+.gray-glow {
+    border: 4px solid grey;
+    box-shadow: 0 0 10px #25292b;
+}
+
+
+
+
+
+
+
+

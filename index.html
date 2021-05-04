@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rock Paper Scissors</title>
+
+        <!-- make sure to link stylsheet first -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+        <header>
+            <h1>Rock Paper Scissors</h1>
+        </header>
+
+        <!--groups stuff inside it as a block together (block level elements)-->
+        <div class="score-board">
+            <div id="user-label" class="badge">user</div>
+            <div id="computer-label" class="badge">comp</div>
+
+            <!-- for scores, Note - spans are in-line elements-->
+            <span id="user-score">0</span>:<span id="computer-score">0</span>
+
+        </div>
+
+        <!-- message display -->
+        <!-- class attribute can apply to multiple elements while id is specific to only one element-->
+        <div class="result">
+            <p>Paper covers rock. You win!</p>
+        </div>
+
+        <!-- now we want to add teh hand emoji images for the user to select their choice-->
+        <div class="choices">
+            <!-- images will be wrapped inside inner divs-->\
+            <!-- also need to add ids to each div to be able to identify each rock, paper, or scissors selection -->
+            <div class="choice" id="r">
+                <img src="images/rock.png" height="100" width="100" alt="">
+            </div>
+
+            <div class="choice" id="p">
+                <img src="images/paper.png" height="100" width="100" alt="">
+            </div>
+
+            <div class="choice" id="s">
+                <img src="images/scissors.png" height="100" width="100" alt="">
+            </div>
+        </div>
+
+
+        <p id="action-message">Make your move.</p>
+        <script src="app.js" charset="utf-8"></script>
+
+    </body>
+
+</html>
